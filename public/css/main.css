@@ -21,7 +21,7 @@ header {
 
 header h1 {
   color: #210f38;
-  font-size: 40px;
+  font-size: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,9 +63,19 @@ header h1 {
           align-items: center;
 }
 
+.mainmenu ul li {
+  -webkit-transition: all ease-in-out 1s;
+  transition: all ease-in-out 1s;
+}
+
+.mainmenu ul li:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
 .mainmenu ul a {
   color: #09440e;
-  font-size: 20px;
+  font-size: 30px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 20px;
@@ -75,26 +85,24 @@ header h1 {
 }
 
 .mainmenu ul a:hover {
-  background-color: #7d7de9;
-  border-radius: 10px;
+  background-color: #f7c3a4;
+  border-radius: 20px;
 }
 
 .seccionmain {
   background-color: #acf79d;
   display: -ms-grid;
   display: grid;
-  border-radius: 10px;
-  -webkit-box-shadow: 2px 2px 6px 0px #6969d6;
-          box-shadow: 2px 2px 6px 0px #6969d6;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 30px;
+  border-radius: 20px;
+  -webkit-box-shadow: 4px 4px 6px 0px #6969d6;
+          box-shadow: 4px 4px 6px 0px #6969d6;
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-top: 50px;
   margin-bottom: 0px;
       grid-template-areas: "titulo menuseccion" "descripcion DescImg" "menuDetalle menuDetalle";
-  -ms-grid-columns: 200px 300px;
-      grid-template-columns: 200px 300px;
-  -ms-grid-rows: 40px 300;
-      grid-template-rows: 40px 300;
+  -ms-grid-rows: 50px 300px 45px;
+      grid-template-rows: 50px 300px 45px;
 }
 
 .seccionmain .titulo {
@@ -114,7 +122,7 @@ header h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 20px;
+  font-size: 30px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
@@ -139,11 +147,21 @@ header h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 20px;
+  font-size: 30px;
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 10px;
   padding-bottom: 0px;
+}
+
+.seccionmain .submenu li {
+  -webkit-transition: all ease-in-out 1s;
+  transition: all ease-in-out 1s;
+}
+
+.seccionmain .submenu li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .seccionmain .submenu a {
@@ -156,11 +174,11 @@ header h1 {
 }
 
 .seccionmain .submenu a:hover {
-  background-color: #7d7de9;
-  border-radius: 10px;
+  background-color: #f7c3a4;
+  border-radius: 20px;
 }
 
-.seccionmain .dps {
+.seccionmain .dsp {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: descripcion;
@@ -168,23 +186,23 @@ header h1 {
   grid-column: 1;
   -ms-grid-row: 2;
   grid-row: 2;
-  font-size: 40px;
+  font-size: 20px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 0px;
 }
 
-.seccionmain .dps p {
+.seccionmain .dsp p {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 20px;
-  margin-bottom: 50px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   font-family: "Hubballi", cursive;
   font-weight: bolder;
 }
 
-.seccionmain .ImgDps {
+.seccionmain .ImgDsp {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: DescImg;
@@ -192,12 +210,27 @@ header h1 {
   grid-column: 2;
   -ms-grid-row: 2;
   grid-row: 2;
+  width: 10%;
+  height: 10%;
+  margin: 40px;
 }
 
-.seccionmain .ImgDps img {
-  width: 10%;
+.seccionmain .ImgDsp img {
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  width: 400px;
   -webkit-box-shadow: 2px 2px 6px 0px #6969d6;
           box-shadow: 2px 2px 6px 0px #6969d6;
+  -webkit-transition: all ease-in-out 1s;
+  transition: all ease-in-out 1s;
+}
+
+.seccionmain .ImgDsp img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  border-radius: 20px;
 }
 
 .seccionmain .menuDet {
@@ -226,7 +259,7 @@ header h1 {
       flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 30px;
   background-color: #b5b5e9;
 }
 
@@ -235,11 +268,15 @@ header h1 {
   padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 0px;
+  -webkit-transition: all ease-in-out 1s;
+  transition: all ease-in-out 1s;
 }
 
 .seccionmain .menuDet li:hover {
-  background-color: #7d7de9;
-  border-radius: 10px;
+  background-color: #f7c3a4;
+  border-radius: 20px;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .seccionmain .menuDet li a {

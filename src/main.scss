@@ -5,16 +5,18 @@ $colorfondocuart: rgb(172, 247, 157);
 $colortexto: rgb(33, 15, 56);
 $colortextosec: rgb(9, 68, 14);
 $fontSizebase: 10px;
-$fontSizetitle:40px;
-$fontSizep:40px;
-$fontSizemenu:20px;
+$fontSizetitle:50px;
+$fontSizep:20px;
+$fontSizemenu:30px;
 
 $font1: 'League Gothic', sans-serif;
 $font2:  'Hubballi', cursive;
 
-
-$hover: rgb(125, 125, 233);
-$hoverborder: 10px ;
+$delay: all ease-in-out 1s;
+$scaleout: scale(1.1);
+$scalein: scale(0.90);
+$hover: rgb(247, 195, 164);
+$radiusborder: 20px ;
 
 /*funcion de sass */
 @mixin setflex ($flexDir, $align) {
@@ -82,15 +84,23 @@ header{
 
     ul{
         @include setflex(row , space-around);
+        li{
+            transition: $delay;
+            &:hover{
+                transform: $scalein;
+            }
+        }
         a{
             color: $colortextosec;
             font-size: $fontSizemenu;
             @include padding(10px,20px );
             font-family: $font2 ;
             font-weight: bolder;
+            
             &:hover{
+                
                 background-color: $hover;
-                border-radius: $hoverborder;
+                border-radius: $radiusborder;
             }
         }
 
@@ -102,18 +112,18 @@ header{
 
     display: grid;
 
-    border-radius: $hoverborder;
+    border-radius: $radiusborder;
 
-    box-shadow: 2px 2px 6px 0px rgb(105, 105, 214);
+    box-shadow: 4px 4px 6px 0px rgb(105, 105, 214);
 
-    @include margin(100px,30px , 0px);
+    @include margin(500px,50px ,0px);
 
     grid-template-areas: "titulo menuseccion"
                         "descripcion DescImg"
                         "menuDetalle menuDetalle";
 
-    grid-template-columns: 200px 300px;
-    grid-template-rows: 40px 300;
+    
+    grid-template-rows: 50px 300px 45px;
 
     .titulo{
         grid-area: titulo ;
@@ -134,6 +144,13 @@ header{
         @include posicion();
         font-size: $fontSizemenu;
         @include padding(0px,10px);
+
+        li{
+            transition: $delay;
+            &:hover{
+                transform: $scaleout
+            }
+        }
         
             
 
@@ -144,34 +161,46 @@ header{
 
                 &:hover{
                     background-color: $hover;
-                    border-radius: $hoverborder;
+                    border-radius: $radiusborder;
                 }
             }
         
     
     }
     
-    .dps{
+    .dsp{
         grid-area: descripcion;
         grid-column: 1;
         grid-row: 2;
         font-size: $fontSizep;
         @include padding(10px,10px);
         p{
-            @include margin (0,20px,50px);
+            @include margin (0,5px,10px);
             font-family: $font2;
                 font-weight: bolder;
         }
     }
     
-    .ImgDps{
+    .ImgDsp{
         grid-area: DescImg;
         grid-column: 2;
         grid-row: 2;
+        
+        width: 10%;
+        height: 10%;
+        margin: 40px;
     
         img{
-            width: 10%;
+           @include margin(25px, 10px, 0px);
+            width: 400px;
             box-shadow: 2px 2px 6px 0px rgb(105, 105, 214);
+            transition: $delay;
+            &:hover{
+                transform: $scaleout;
+                border-radius: $radiusborder;
+            }
+
+     
         }
     }
     
@@ -186,9 +215,11 @@ header{
 
         li{
             @include padding(10px,10px );
+            transition: $delay;
             &:hover{
                 background-color: $hover;
-                border-radius: $hoverborder;
+                border-radius: $radiusborder;
+                transform: $scalein;
             }
             a{
                 font-family: $font2;
