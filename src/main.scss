@@ -1,0 +1,183 @@
+$colorfondo: rgb(247, 225, 225);
+$colorFondosec: rgb(181, 181, 233);
+$colorfondoterc: rgb(247, 193, 157);
+$colorfondocuart: rgb(172, 247, 157);
+$colortexto: rgb(33, 15, 56);
+$colortextosec: rgb(9, 68, 14);
+$fontSizebase: 10px;
+$fontSizetitle:40px;
+$fontSizep:40px;
+$fontSizemenu:20px;
+
+$hover: rgb(125, 125, 233);
+$hoverborder: 10px ;
+
+/*funcion de sass */
+@mixin setflex ($flexDir, $align) {
+    display: flex;
+        flex-direction: $flexDir; //row
+        flex-wrap: wrap;
+        justify-content: $align; //space-around
+        align-items: center;
+}
+
+
+
+@mixin posicion(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+@mixin padding ($IzqDer, $top){
+    padding-left: $IzqDer;
+    padding-right: $IzqDer;
+    padding-top: $top;
+    padding-bottom: 0px;  
+}
+
+
+@mixin margin ($lado, $arriba, $abajo){
+    margin-left: $lado;
+    margin-right: $lado ;
+    margin-top: $arriba;
+    margin-bottom: $abajo;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box; /*considerar tamaño hasta borde*/
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+    font-size: $fontSizebase;
+}
+
+header{
+    background-color: $colorfondoterc;
+    
+    
+    /*forma sass*/
+    h1{
+        color: $colortexto;
+        font-size: $fontSizebase *3 ;
+        @include posicion();
+        @include padding(0px,20px )
+    }
+}
+
+.mainmenu{
+    background-color: $colorFondosec;
+    @include padding(0px,20px );
+
+    ul{
+        @include setflex(row , space-around);
+        a{
+            color: $colortextosec;
+            font-size: $fontSizemenu;
+            @include padding(10px,20px );
+            &:hover{
+                background-color: $hover;
+                border-radius: $hoverborder;
+            }
+        }
+
+    }
+}
+
+.seccionmain{
+    background-color: $colorfondocuart;
+
+    display: grid;
+
+    border-radius: $hoverborder;
+
+    @include margin(350px,30px , 0px);
+
+    grid-template-areas: "titulo menuseccion"
+                        "descripcion DescImg"
+                        "menuDetalle menuDetalle";
+
+    grid-template-columns: 300px 350px;
+    grid-template-rows: 40px 200px 40px;
+
+    .titulo{
+        grid-area: titulo ;
+        grid-column: 1;
+        grid-row: 1;
+        @include posicion();
+        font-size: $fontSizemenu;
+        @include padding(10px,10px);
+        
+        
+    }
+    
+    .submenu{
+        grid-area: menuseccion;
+        grid-column: 2;
+        grid-row: 1;
+        @include posicion();
+        font-size: $fontSizemenu;
+        @include padding(0px,10px);
+        
+            
+
+            a{
+                @include padding(30px,10px);
+
+                &:hover{
+                    background-color: $hover;
+                    border-radius: $hoverborder;
+                }
+            }
+        
+    
+    }
+    
+    .dps{
+        grid-area: descripcion;
+        grid-column: 1;
+        grid-row: 2;
+        font-size: $fontSizep;
+        @include padding(10px,10px);
+        p{
+            @include padding(40px,20px,)
+        }
+    }
+    
+    .ImgDps{
+        grid-area: DescImg;
+        grid-column: 2;
+        grid-row: 2;
+    
+        img{
+            width: 0px;
+        }
+    }
+    
+    .menuDet{
+        grid-area: menuDetalle;
+        grid-column: 1 2;
+        grid-row: 3;
+        @include posicion();
+        @include setflex(row, center);
+        font-size: $fontSizemenu;
+        background-color: $colorFondosec;
+
+        li{
+            @include padding(10px,10px );
+            &:hover{
+                background-color: $hover;
+                border-radius: $hoverborder;
+            }
+        }
+    }
+
+
+}
+

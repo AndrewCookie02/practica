@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*funcion de sass */
+* {
+  margin: 0%;
+  padding: 0%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*considerar tamaño hasta borde*/
+  text-decoration: none;
+  list-style: none;
+}
+/*# sourceMappingURL=aaaa.css.map */
