@@ -261,6 +261,8 @@ header h1 {
   align-items: center;
   font-size: 30px;
   background-color: #b5b5e9;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .seccionmain .menuDet li {

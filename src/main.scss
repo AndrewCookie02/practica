@@ -213,6 +213,8 @@ header{
         @include setflex(row, center);
         font-size: $fontSizemenu;
         background-color: $colorFondosec;
+        border-bottom-left-radius: $radiusborder;
+        border-bottom-right-radius: $radiusborder;
 
         li{
             @include padding(10px,10px );
