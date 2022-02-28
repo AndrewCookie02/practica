@@ -116,7 +116,7 @@ header{
 
     box-shadow: 4px 4px 6px 0px rgb(105, 105, 214);
 
-    @include margin(500px,50px ,0px);
+    @include margin(400px,50px ,0px);
 
     grid-template-areas: "titulo menuseccion"
                         "descripcion DescImg"

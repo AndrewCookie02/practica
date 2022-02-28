@@ -96,8 +96,8 @@ header h1 {
   border-radius: 20px;
   -webkit-box-shadow: 4px 4px 6px 0px #6969d6;
           box-shadow: 4px 4px 6px 0px #6969d6;
-  margin-left: 500px;
-  margin-right: 500px;
+  margin-left: 400px;
+  margin-right: 400px;
   margin-top: 50px;
   margin-bottom: 0px;
       grid-template-areas: "titulo menuseccion" "descripcion DescImg" "menuDetalle menuDetalle";
