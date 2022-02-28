@@ -9,6 +9,10 @@ $fontSizetitle:40px;
 $fontSizep:40px;
 $fontSizemenu:20px;
 
+$font1: 'League Gothic', sans-serif;
+$font2:  'Hubballi', cursive;
+
+
 $hover: rgb(125, 125, 233);
 $hoverborder: 10px ;
 
@@ -65,9 +69,10 @@ header{
     /*forma sass*/
     h1{
         color: $colortexto;
-        font-size: $fontSizebase *3 ;
+        font-size: $fontSizetitle ;
         @include posicion();
-        @include padding(0px,20px )
+        @include padding(0px,20px );
+        font-family: $font1;
     }
 }
 
@@ -81,6 +86,8 @@ header{
             color: $colortextosec;
             font-size: $fontSizemenu;
             @include padding(10px,20px );
+            font-family: $font2 ;
+            font-weight: bolder;
             &:hover{
                 background-color: $hover;
                 border-radius: $hoverborder;
@@ -115,6 +122,7 @@ header{
         @include posicion();
         font-size: $fontSizemenu;
         @include padding(10px,10px);
+        font-family: $font2;
         
         
     }
@@ -131,6 +139,8 @@ header{
 
             a{
                 @include padding(30px,10px);
+                font-family: $font2;
+                font-weight: bolder;
 
                 &:hover{
                     background-color: $hover;
@@ -148,7 +158,9 @@ header{
         font-size: $fontSizep;
         @include padding(10px,10px);
         p{
-            @include margin (0,20px,50px)
+            @include margin (0,20px,50px);
+            font-family: $font2;
+                font-weight: bolder;
         }
     }
     
@@ -177,6 +189,10 @@ header{
             &:hover{
                 background-color: $hover;
                 border-radius: $hoverborder;
+            }
+            a{
+                font-family: $font2;
+                font-weight: bolder;
             }
         }
     }
