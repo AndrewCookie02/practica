@@ -5,9 +5,9 @@ $colorfondocuart: rgb(172, 247, 157);
 $colortexto: rgb(33, 15, 56);
 $colortextosec: rgb(9, 68, 14);
 $fontSizebase: 10px;
-$fontSizetitle:50px;
+$fontSizetitle:5rem;
 $fontSizep:20px;
-$fontSizemenu:30px;
+$fontSizemenu:2.5rem;
 
 $font1: 'League Gothic', sans-serif;
 $font2:  'Hubballi', cursive;
@@ -37,11 +37,11 @@ $radiusborder: 20px ;
 }
 
 
-@mixin padding ($IzqDer, $top){
-    padding-left: $IzqDer;
-    padding-right: $IzqDer;
+@mixin padding ($Izq, $Der, $top){
+    padding-left: $Izq;
+    padding-right: $Der;
     padding-top: $top;
-    padding-bottom: 0px;  
+    padding-bottom: 0.5%;  
 }
 
 
@@ -62,6 +62,12 @@ $radiusborder: 20px ;
 
 :root{
     font-size: $fontSizebase;
+    max-height: 100%;
+}
+
+body{
+    max-height: 100%;
+    
 }
 
 header{
@@ -73,17 +79,16 @@ header{
         color: $colortexto;
         font-size: $fontSizetitle ;
         @include posicion();
-        @include padding(0px,20px );
         font-family: $font1;
     }
 }
 
 .mainmenu{
     background-color: $colorFondosec;
-    @include padding(0px,20px );
 
     ul{
         @include setflex(row , space-around);
+        @include padding (0%, 0%, 1%);
         li{
             transition: $delay;
             &:hover{
@@ -94,12 +99,10 @@ header{
         a{
             color: $colortextosec;
             font-size: $fontSizemenu;
-            @include padding(10px,20px );
             font-family: $font2 ;
             font-weight: bolder;
             
             &:hover{
-                
                 background-color: $hover;
                 border-radius: $radiusborder;
             }
@@ -111,28 +114,33 @@ header{
 .seccionmain{
     background-color: $colorfondocuart;
 
-    display:  inline-grid;
+    width: 60%;
+    height: 60%;
+
+    display:  grid;
 
     border-radius: $radiusborder;
 
     box-shadow: 4px 4px 6px 0px rgb(105, 105, 214);
 
-    @include margin(400px,50px ,0px);
+    @include margin(18%,50px ,0px);
 
     grid-template-areas: "titulo menuseccion"
                         "descripcion DescImg"
                         "menuDetalle menuDetalle";
 
-    
+    grid-template-columns: 55% 40%;
+
     grid-template-rows: 50px 300px 45px;
+
+    gap:5px;
 
     .titulo{
         grid-area: titulo ;
-        grid-column: 1;
-        grid-row: 1;
+       /* grid-column: 1;
+        grid-row: 1;*/
         @include posicion();
         font-size: $fontSizemenu;
-        @include padding(10px,10px);
         font-family: $font2;
         
         
@@ -140,11 +148,10 @@ header{
     
     .submenu{
         grid-area: menuseccion;
-        grid-column: 2;
-        grid-row: 1;
+       /* grid-column: 2;
+        grid-row: 1; */
         @include posicion();
         font-size: $fontSizemenu;
-        @include padding(0px,10px);
 
         li{
             transition: $delay;
@@ -152,11 +159,7 @@ header{
                 transform: $scaleout
             }
         }
-        
-            
-
             a{
-                @include padding(30px,10px);
                 font-family: $font2;
                 font-weight: bolder;
 
@@ -171,10 +174,10 @@ header{
     
     .dsp{
         grid-area: descripcion;
-        grid-column: 1;
-        grid-row: 2;
-        font-size: $fontSizep;
-        @include padding(10px,10px);
+       /* grid-column: 1;
+        grid-row: 2;*/
+        font-size: 2rem;
+        overflow: hidden;
         p{
             @include margin (0,5px,10px);
             font-family: $font2;
@@ -184,16 +187,19 @@ header{
     
     .ImgDsp{
         grid-area: DescImg;
-        grid-column: 2;
-        grid-row: 2;
+        overflow: hidden;
+        text-align: center;
+        display: inline-block;
+       /* grid-column: 2;
+        grid-row: 2;*/
         
-        width: 10%;
-        height: 10%;
-        margin: 40px;
+        //width: 10%;
+       // height: 10%;
+       // margin: 40px;
     
         img{
            @include margin(25px, 10px, 0px);
-            width: 400px;
+            width: 80%;
             box-shadow: 2px 2px 6px 0px rgb(105, 105, 214);
             transition: $delay;
             &:hover{
@@ -207,8 +213,8 @@ header{
     
     .menuDet{
         grid-area: menuDetalle;
-        grid-column: 1 2;
-        grid-row: 3;
+      /*  grid-column: 1 2;
+        grid-row: 3;*/
         @include posicion();
         @include setflex(row, center);
         font-size: $fontSizemenu;
@@ -217,7 +223,7 @@ header{
         border-bottom-right-radius: $radiusborder;
 
         li{
-            @include padding(10px,10px );
+          //  @include padding(10px,10px );
             transition: $delay;
             &:hover{
                 background-color: $hover;
@@ -229,6 +235,27 @@ header{
                 font-weight: bolder;
             }
         }
+    }
+
+
+}
+
+@media all and (max-width:1024px){
+
+    .seccionmain{
+    
+        width: 80%;
+        height: 70%;
+    
+        grid-template-areas: "titulo"
+                            "menuseccion"
+                            "descripcion" 
+                            "DescImg"
+                            "menuDetalle";
+    
+        grid-template-columns: 80%;
+    
+        grid-template-rows: 50px 50px 300px 300px 45px;
     }
 
 
